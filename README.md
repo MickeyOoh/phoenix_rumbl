@@ -38,6 +38,10 @@ live_dashboard_path  GET     /dashboard/:node/:page                 Phoenix.Live
           websocket  WS      /socket/websocket                      RumblWeb.UserSocket
 ```
 
+
+Chp07 Ecto Queries and Constraints
+-----
+
 **mix phx.gen.html Multimedia Category category name:string**
 -----
 This command generates a controller, view, and template on the frontend. On the backend, it generates a *Multimedia* context, a *Multimedia Category* schema, and a migration. This generator, and the similar *mix phx.gen.json* generator, are typically used when we want to define all conveniences to expose a resource over the web interface.
@@ -82,5 +86,19 @@ a schema with a migration. It's useful for creating a resource when you want to 
 ----
 This generator builds a new empty migration. Useful when the schema and context are already laid out, and all you need is to update the database.
 
-Chp07 Ecto Queries and Constraints
+Chp08 Testing MVC
 -----
+
+Principles to emphasize:
+* Fast: We're going to make sure our tests run quickly and can run concurrently wherever possible
+* isolated: We want to have the right level of isolation in our tests. Tests that are too isolated won't have enough context to be useful. Tests that aren't isolated enough will be difficult to understand and maintain.
+* DRY(Don't Repeat Yourself): We want to eliminate unnecessary repetition in our tests.
+* Repeatable: We want the same test on the same code to always yield the same result.
+
+A *unit test exercises* a function for one layer of your application. For example, if you're testing a web calculator, unit tests would exercise the *Calculator* module supporting your arithmetic. You might dedicate one or more tests to the *add* function on your calculator module.
+
+An *integration test* focuses on the way different layers of an application fit together. Our integration tests in this chapter will generally do a request to a controller to use the things we've created so far. A single test will begin at our endpoint, run through our pipelines, read from the database, and render tenplates through views just as Phoenix requests would.
+
+
+
+
