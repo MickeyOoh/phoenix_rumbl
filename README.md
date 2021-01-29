@@ -100,5 +100,7 @@ A *unit test exercises* a function for one layer of your application. For exampl
 An *integration test* focuses on the way different layers of an application fit together. Our integration tests in this chapter will generally do a request to a controller to use the things we've created so far. A single test will begin at our endpoint, run through our pipelines, read from the database, and render tenplates through views just as Phoenix requests would.
 
 
+Chp09 Watching Videos
+-----
 
 
