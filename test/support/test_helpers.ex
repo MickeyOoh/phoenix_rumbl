@@ -26,4 +26,5 @@ defmodule Rumbl.TestHelpers do
     {:ok, video} = Multimedia.create_video(user, attrs)
     video
   end
+
 end

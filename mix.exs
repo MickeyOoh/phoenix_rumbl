@@ -25,7 +25,7 @@ defmodule Rumbl.MixProject do
   end
 
   # Specifies which paths to compile per environment.
-  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(:test), do: ["lib", "test/support", "test/rumbl_web/support"]
   defp elixirc_paths(_), do: ["lib"]
 
   # Specifies your project dependencies.
@@ -46,6 +46,7 @@ defmodule Rumbl.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:pbkdf2_elixir, "~> 1.0"},         # password hashing libraries
+      {:info_sys, path: "../apps/info_sys"}
     ]
   end
 
